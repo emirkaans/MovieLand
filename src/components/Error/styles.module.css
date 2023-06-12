@@ -1,0 +1,11 @@
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem;
+  width: 70vw;
+}
+
+.errorMessage {
+  color: var(--secondary-color);
+}

@@ -1,10 +1,10 @@
-.logo-area {
+.logoArea {
   display: flex;
   align-items: center;
   justify-content: start;
 }
 
-#logo--pic {
+#logoPic {
   width: 4.5rem;
   margin-left: 1.5rem;
 }
