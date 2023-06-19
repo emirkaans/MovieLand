@@ -6,7 +6,10 @@ import Error from "../Error/Error";
 function Content({ movies, apiData, isError }) {
   return (
     <div className={styles.container}>
-      <Card movies={movies} apiData={apiData} />
+      {movies.map((movie, index) => (
+        <Card movieItem={movie} key={index} apiData={apiData} />
+      ))}
+
       {isError ? <Error /> : null}
     </div>
   );
