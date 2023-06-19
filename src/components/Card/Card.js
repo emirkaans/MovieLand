@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import styles from "./styles.module.css";
 
-function Card({ movies, apiData }) {
+function Card({ movieItem, apiData }) {
   function chooseClass(vote) {
     if (vote >= 8) {
       return `${styles.green}`;
@@ -12,24 +12,23 @@ function Card({ movies, apiData }) {
     }
   }
   return (
-    <>
-      {movies.map((movie, index) => (
-        <div className={styles.movieCard} key={index}>
-          <div className={styles.poster}>
-            <img src={apiData.imgPath + movie.poster_path} alt={movie.title} />
-          </div>
-          <div className={styles.nameScore}>
-            <h3>{movie.title}</h3>
-            <span className={chooseClass(movie.vote_average)}>
-              {Number(movie.vote_average.toFixed(1))}
-            </span>
-          </div>
-          <div className={styles.description}>
-            <p>{movie.overview} </p>
-          </div>
-        </div>
-      ))}
-    </>
+    <div className={styles.movieCard}>
+      <div className={styles.poster}>
+        <img
+          src={apiData.imgPath + movieItem.poster_path}
+          alt={movieItem.title}
+        />
+      </div>
+      <div className={styles.nameScore}>
+        <h3>{movieItem.title}</h3>
+        <span className={chooseClass(movieItem.vote_average)}>
+          {Number(movieItem.vote_average.toFixed(1))}
+        </span>
+      </div>
+      <div className={styles.description}>
+        <p>{movieItem.overview} </p>
+      </div>
+    </div>
   );
 }
 
